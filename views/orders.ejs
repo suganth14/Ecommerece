@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+           <nav>
+              <div class="menu-icon">
+                 <i class="fa fa-bars fa-2x"></i>
+              </div>
+              <div class="logo">
+                E-cart
+              </div>
+              <div class="menu">
+                 <ul>
+                    <li><a style="text-decoration: none;color: #fff;" href="/home">Home</a></li>
+                    <li><a style="text-decoration: none;color: #fff;" href="/cart">Cart</a></li>
+                    <li><a style="text-decoration: none;color: #fff;" href="/your_orders">Your Orders</a></li>
+                    <li><a style="text-decoration: none;color: #fff;" href="/profile">Profile</a></li>
+                 </ul>
+              </div>
+           </nav>
+        </header> 
+     </div>
+
+
+     <!-- ---------------- -->
+
+<div class="cart11">
+    
+    
+    <div class="cart_inside">
+        <h1 style="padding-bottom: 30px;text-decoration: underline;">Your Orders</h1>
+    <h1><%= count%> Orders</h1>
+
+    <% for(var i=0; i<count; i++) {%>
+        <h1 class="s1">Total amount : Rs <%= result[i].total_amount%></h1>
+        <!-- <h1><%= result[i].email%></h1> -->
+        <% if(result[i].payment_status){%>
+            <h1 class="s1">Payment Status : Completed </h1>
+        <% } %>       
+        <br>
+        <br>
+        <br>
+     <% } %>
+    
+    </div>
+</div>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+           $(".menu-icon").on("click", function() {
+                 $("nav ul").toggleClass("showing");
+           });
+     });
+    
+     // Scrolling Effect
+    
+     $(window).on("scroll", function() {
+           if($(window).scrollTop()) {
+                 $('nav').addClass('black');
+           }
+    
+           else {
+                 $('nav').removeClass('black');
+           }
+     })
+     </script>     
+</body>
+</html>

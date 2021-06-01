@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+           <nav>
+              <div class="menu-icon">
+                 <i class="fa fa-bars fa-2x"></i>
+              </div>
+              <div class="logo">
+                 E-cart
+              </div>
+              <div class="menu">
+                 <ul>
+                    <li><a class="a22" style="text-decoration: none;color: #fff;" href="/home">Home</a></li>
+                    <li><a class="a22" style="text-decoration: none;color: #fff;" href="/cart">Cart</a></li>
+                    <li><a class="a22" style="text-decoration: none;color: #fff;" href="/your_orders">Your Orders</a></li>
+                    <li><a class="a22" style="text-decoration: none;color: #fff;" href="/profile">Profile</a></li>
+                 </ul>
+              </div>
+           </nav>
+        </header> 
+     </div>
+
+
+
+     <!-- --------------------------------- -->
+
+     <div class="cart11">
+
+        <div class="cart_inside">
+        <h1 style="padding-bottom: 30px;text-decoration: underline;">Cart</h1>
+        <h4 style="padding-bottom: 20px;text-decoration:underline;"><%= count %> item in cart</h4>
+        <% var total_amount = 0 %> 
+        <% for(var i =0;i<count;i++) { %>
+            <h3 class="s1"><%= result[i].name %></h3><br>
+            <h5 class="s1"><%= result[i].type %></h5><br>
+            <h5 class="s1">Quantity : <%= result[i].quantity %></h5><br>
+            <h5 class="s1">Cost per item : Rs<%= result[i].cost_per_item %></h5><br>
+            <h1 class="s1">Total  : Rs <%= result[i].total_payable %> </h1><br>
+            <br>
+            <br>
+            <% total_amount = total_amount + parseFloat(result[i].total_payable) %> 
+        <% } %>
+        <h1>Total payment : Rs <%= total_amount %></h1>
+
+    <div class="buttn">
+        <form style = "display: inline-block;" action="/payment" method="POST">
+            <button class="btn-info"name="total_amount" value="<%= total_amount %>" type="submit">Place order</button>
+        </form>
+        <form style = "display: inline-block;"  action="/delete_item" method="POST">
+            <button class="btn-danger"name="total_amount" value="<%= total_amount %>" type="submit">Delete Cart !</button>
+        </form>
+    </div>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+       $(".menu-icon").on("click", function() {
+             $("nav ul").toggleClass("showing");
+       });
+ });
+
+ // Scrolling Effect
+
+ $(window).on("scroll", function() {
+       if($(window).scrollTop()) {
+             $('nav').addClass('black');
+       }
+
+       else {
+             $('nav').removeClass('black');
+       }
+ })
+ </script>
+</body> 
+</html>

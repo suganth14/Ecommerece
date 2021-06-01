@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+           <nav>
+              <div class="menu-icon">
+                 <i class="fa fa-bars fa-2x"></i>
+              </div>
+              <div class="logo">
+               E-cart
+              </div>
+              <div class="menu">
+                 <ul>
+                    <li><a style="text-decoration: none;color: #fff;" href="/home">Home</a></li>
+                    <li><a style="text-decoration: none;color: #fff;" href="/cart">Cart</a></li>
+                    <li><a style="text-decoration: none;color: #fff;" href="/your_orders">Your Orders</a></li>
+                    <li><a style="text-decoration: none;color: #fff;" href="/profile">Profile</a></li>
+                 </ul>
+              </div>
+           </nav>
+        </header> 
+     </div>
+     <!-- <div>
+         <input type="checkbox" name="" id="">
+     </div> -->
+
+
+     <form action="/addtocart" method="POST">
+      <div class="cart1">
+
+         <% for(var i=0;i<count1;i++){ %>
+         <% if(producttype[i] === "SHOES"){ %>
+            <div class="product1" style="background: url(https://sneakerfits.com/wp-content/uploads/2020/10/nike-lebron-18-james-gang-clothing-outfits.jpg);background-size: cover;">
+         <% }else if(producttype[i] === "CLOTHING"){ %>  
+            <div class="product1" style="background: url(https://media.istockphoto.com/photos/stack-of-clothes-empty-copy-space-picture-id1126062309?k=6&m=1126062309&s=612x612&w=0&h=Aj62e7hw4pNI0GPZAJWoZ3tXPF0DcgLN2hp4jtLbs2o=);background-size: cover;">
+          <% }else{ %>     
+            <div class="product1" style="background:url(https://thumbs.dreamstime.com/b/gadgets-accessories-isolated-white-background-gadgets-accessories-132710503.jpg);background-size: cover;">
+            <% } %>
+         <div class="s2">
+            <h1 class="name s1"><%= productname[i] %></h1><br>
+            <h6 class="type s1"><%= producttype[i] %></h6><br>
+            <h4 class="stock s1">Stock : <%= productstock[i] %></h4><br>
+            <h3 class="price s1">Price : Rs <%= productcost[i] %></h3><br>
+         </div>
+        
+        <div class="buttn">
+         <% if(productstock[i]!=0) { %>
+            <button class="btn-info" type="submit" name="cartitem" value="<%= productname[i] %>">Add to cart</button>
+            <% } %>
+        </div>
+         
+      
+         </div>
+      <% } %>
+
+
+   </div>
+    </form>
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+           $(".menu-icon").on("click", function() {
+                 $("nav ul").toggleClass("showing");
+           });
+     });
+
+     // Scrolling Effect
+
+     $(window).on("scroll", function() {
+           if($(window).scrollTop()) {
+                 $('nav').addClass('black');
+           }
+
+           else {
+                 $('nav').removeClass('black');
+           }
+     })
+     </script>
+</body>
+</html>

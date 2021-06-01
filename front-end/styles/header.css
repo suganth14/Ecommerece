@@ -1,0 +1,200 @@
+/* html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+} */
+
+/* body {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+} */
+
+body{
+  font-family: 'Merriweather', serif;
+}
+header {
+  width: 100%;
+  height: 200px;
+  /* height: 500px; */
+  background: url(https://www.x-cart.com/wp-content/uploads/2020/06/How_the_best_ecommerce_sites_win_at_web_design-768x278.jpg)
+    no-repeat 50% 50%;
+  background-size: cover;
+  margin-bottom: 0;
+}
+
+.a22{
+  font-size: 20px;
+  color: #ffc93c;
+}
+
+.content {
+  width: 94%;
+  margin: 4em auto;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.logo {
+  /* line-height: 150px; */
+  position: fixed;
+  float: left;
+  margin: 16px 46px;
+  color: #fff;
+  font-weight: bold;
+  /* font-size: 20px; */
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  line-height: 60px;
+}
+
+nav ul {
+  line-height: 60px;
+  list-style: none;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  color: #fff;
+  padding: 0;
+  text-align: right;
+  margin: 0;
+  padding-right: 40px;
+  transition: 1s;
+}
+
+nav.black ul {
+  background: #000;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 16px 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.menu-icon {
+  line-height: 60px;
+  width: 100%;
+  background: #000;
+  text-align: right;
+  box-sizing: border-box;
+  padding: 15px 24px;
+  cursor: pointer;
+  color: #fff;
+  display: none;
+}
+
+@media (max-width: 786px) {
+  .logo {
+    position: fixed;
+    top: 0;
+    margin-top: 16px;
+  }
+
+  nav ul {
+    max-height: 0px;
+    background: #000;
+  }
+
+  nav.black ul {
+    background: #000;
+  }
+
+  .showing {
+    max-height: 34em;
+  }
+
+  nav ul li {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+  
+}
+
+.cart1{
+  margin:0;
+  padding-top: 50px;
+  height: 100%;
+  margin-top: 0;
+  background-color: #dbf6e9;
+  background-size: cover;
+}
+.product1{
+  /* margin-top: 70px; */
+
+  border-radius: 30px;;
+  /* position : relative; */
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  margin-top: 50px;
+  padding-top: 70px;
+  /* margin-bottom: 50px; */
+  padding-bottom: 70px;
+}
+.buttn{
+  margin-top: 50px;
+}
+.btn-info{
+  padding : 10px 40px;
+  border-radius: 30px;
+}
+.btn-danger{
+  padding : 10px 40px;
+  border-radius: 30px;
+}
+.s1{
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.s2{
+  background-color: #fed049;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 10px 10px;
+  /* text-decoration-color:#ce1212; */
+}
+
+.cart11{
+  background-color: #d8e3e7;
+  /* height: 100vh; */
+  background-size: cover;
+}
+
+.cart_inside{
+  /* margin-top: 70px; */
+
+  border-radius: 30px;;
+  /* position : relative; */
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  /* margin-top: 50px; */
+  padding-top: 70px;
+  /* margin-bottom: 50px; */
+  padding-bottom: 70px;
+}
